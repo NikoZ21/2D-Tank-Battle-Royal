@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Projectile
   - PickUp
-  - 
+  - Walls
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: BackGround
     uniqueID: 1608883645
+    locked: 0
+  - name: Walls
+    uniqueID: 739096935
     locked: 0
   - name: Coin
     uniqueID: 4223198147

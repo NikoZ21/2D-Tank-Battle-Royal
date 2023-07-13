@@ -20,9 +20,10 @@ public class ProjectileLauncher : NetworkBehaviour
     [SerializeField] private float projectileSpeed = 5f;
     [SerializeField] private float fireRate = 0.2f;
     [SerializeField] private float muzzleFlashDuration;
+    [SerializeField] private int costToFire;
 
     private bool shouldFire;
-    private float previousFireTime;
+    private float timer;
     private float muzzleFlashTimer;
 
     public override void OnNetworkSpawn()
@@ -55,11 +56,13 @@ public class ProjectileLauncher : NetworkBehaviour
 
         if (!IsOwner) return;
 
+        timer -= Time.deltaTime;
+
         if (!shouldFire) return;
 
-        if (Time.time < (1 / fireRate) + previousFireTime) return;
+        if (timer > 0) return;
 
-        previousFireTime = Time.time;
+        timer = 1 / fireRate;
 
         PrimaryFireServerRpc(projectileSpawnPoint.position, projectileSpawnPoint.up);
 

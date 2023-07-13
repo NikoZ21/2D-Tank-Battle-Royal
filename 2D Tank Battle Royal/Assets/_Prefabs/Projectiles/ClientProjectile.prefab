@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -647597663
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 92bb59410b4740a4e8d99456fb12f01d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -154,8 +154,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2399662563159109099, guid: bd6cbc00de0489c4294d218e709979cd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7071712733438066191}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8460993094435234523, guid: bd6cbc00de0489c4294d218e709979cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6981228851496783577}
   m_SourcePrefab: {fileID: 100100000, guid: bd6cbc00de0489c4294d218e709979cd, type: 3}
+--- !u!1 &3021249410727651707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8460993094435234523, guid: bd6cbc00de0489c4294d218e709979cd, type: 3}
+  m_PrefabInstance: {fileID: 6667260599608527776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6981228851496783577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3021249410727651707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ae9580d38afe74e9e591fe420d7dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1381127212937032112, guid: 2299f2447e26bec4c86d1a3f66611411, type: 3}
 --- !u!4 &9064495166197933643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2399662563159109099, guid: bd6cbc00de0489c4294d218e709979cd, type: 3}

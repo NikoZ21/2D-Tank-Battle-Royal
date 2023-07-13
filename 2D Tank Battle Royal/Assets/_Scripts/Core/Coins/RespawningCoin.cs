@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using UnityEditor.Search;
 using UnityEngine;
 
 public class RespawningCoin : Coin
