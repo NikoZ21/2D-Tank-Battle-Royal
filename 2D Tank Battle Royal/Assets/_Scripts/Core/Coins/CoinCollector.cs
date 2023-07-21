@@ -19,6 +19,5 @@ public class CoinCollector : NetworkBehaviour
         if (!IsServer) return;
 
         TotalCoins.Value += collectedCoin;
-
     }
 }
