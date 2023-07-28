@@ -5,7 +5,7 @@ public class HostSingleTon : MonoBehaviour
 {
     private static HostSingleTon instance;
 
-    private HostGameManager _gameManager;
+    public HostGameManager GameManager { get; private set; }
 
     public static HostSingleTon Instance
     {
@@ -28,6 +28,6 @@ public class HostSingleTon : MonoBehaviour
 
     public void CreateHost()
     {
-        _gameManager = new HostGameManager();
+        GameManager = new HostGameManager();
     }
 }

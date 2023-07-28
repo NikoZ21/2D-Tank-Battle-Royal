@@ -18,10 +18,7 @@ public class ApplicationController : MonoBehaviour
 
     private async Task LaunchInMode(bool isDedicatedServer)
     {
-        if (isDedicatedServer)
-        {
-            return;
-        }
+        if (isDedicatedServer) return;
 
         HostSingleTon hostSingleTon = Instantiate(hostPrefab);
         hostSingleTon.CreateHost();
