@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
@@ -18,6 +19,7 @@ public class HostGameManager
     private const string GAME = "Game";
     private Allocation allocation;
     private string joinCode;
+    private NetworkServer _networkServer;
     private const int MaxConnections = 20;
 
     public async Task StartHostAsync()
@@ -51,7 +53,7 @@ public class HostGameManager
 
         try
         {
-            var lobbyName = "New Lobby";
+            var lobbyName = $"{PlayerPrefs.GetString(NameSelector.PlayerNameKey, "No One")}'s Lobby";
             var maxPlayers = 8;
             var lobbyOptions = new CreateLobbyOptions();
             lobbyOptions.IsPrivate = false;
@@ -75,6 +77,18 @@ public class HostGameManager
             Debug.Log(ex);
             return;
         }
+
+        _networkServer = new NetworkServer(NetworkManager.Singleton);
+
+        UserData userData = new UserData()
+        {
+            userName = PlayerPrefs.GetString(NameSelector.PlayerNameKey, "Missing Name"),
+        };
+
+        string payLoad = JsonUtility.ToJson(userData);
+        byte[] payLoadByte = Encoding.UTF8.GetBytes(payLoad);
+
+        NetworkManager.Singleton.NetworkConfig.ConnectionData = payLoadByte;
 
         NetworkManager.Singleton.StartHost();
         NetworkManager.Singleton.SceneManager.LoadScene(GAME, LoadSceneMode.Single);
