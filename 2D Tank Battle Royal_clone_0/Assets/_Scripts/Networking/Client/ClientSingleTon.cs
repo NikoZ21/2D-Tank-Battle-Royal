@@ -32,4 +32,9 @@ public class ClientSingleTon : MonoBehaviour
 
         return await GameManager.InitAsync();
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Dispose();
+    }
 }

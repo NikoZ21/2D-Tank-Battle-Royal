@@ -30,4 +30,9 @@ public class HostSingleTon : MonoBehaviour
     {
         GameManager = new HostGameManager();
     }
+
+    private void OnDestroy()
+    {
+        GameManager?.Dispose();
+    }
 }
