@@ -6,13 +6,14 @@ using UnityEngine;
 
 public class TankPlayer : NetworkBehaviour
 {
-    [SerializeField] private CinemachineVirtualCamera camera;
+    [SerializeField] private CinemachineVirtualCamera m_Camera;
+    [SerializeField] private int m_OwnerPriority = 15;
 
     public override void OnNetworkSpawn()
     {
-        if (!IsOwner)
+        if (IsOwner)
         {
-            camera.Priority = 0;
+            m_Camera.Priority = m_OwnerPriority;
         }
     }
 }

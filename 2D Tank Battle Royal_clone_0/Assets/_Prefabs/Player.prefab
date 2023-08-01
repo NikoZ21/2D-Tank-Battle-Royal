@@ -1242,6 +1242,7 @@ GameObject:
   - component: {fileID: 538582627567443242}
   - component: {fileID: -1353508597751146512}
   - component: {fileID: 1193683583609804786}
+  - component: {fileID: 7254419810417574234}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1456,3 +1457,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuelTank: {fileID: -1353508597751146512}
   fuelBarImage: {fileID: 107239325759811617}
+--- !u!114 &7254419810417574234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104612231372326361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf2e1e74b93c1c4b8dd1d1e5c8f12b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Camera: {fileID: 5459644268743534062}
+  m_OwnerPriority: 15
