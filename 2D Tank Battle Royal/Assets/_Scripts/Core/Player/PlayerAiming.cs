@@ -26,8 +26,6 @@ public class PlayerAiming : NetworkBehaviour
     {
         if (!IsOwner) return;
 
-        // Debug.Log(_mainCamera.name);
-
         var mouseWorldPos = Camera.main.ScreenToWorldPoint(inputReader.AimPosition);
 
         turretTransform.up = new Vector2(
