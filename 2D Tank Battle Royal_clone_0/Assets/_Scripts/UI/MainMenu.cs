@@ -7,13 +7,13 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private TMP_InputField joinCodeField;
 
-    public async void StartHost()
-    {
-        await HostSingleTon.Instance.GameManager.StartHostAsync();
-    }
+    // public async void StartHost()
+    // {
+    //     //await HostSingleTon.Instance.GameManager.StartHostAsync();
+    // }
 
-    public async void StartClient()
-    {
-        await ClientSingleTon.Instance.GameManager.StartClientAsync(joinCodeField.text);
-    }
+    // public async void StartClient()
+    // {
+    //     //await ClientSingleTon.Instance.GameManager.StartClientAsync(joinCodeField.text);
+    // }
 }

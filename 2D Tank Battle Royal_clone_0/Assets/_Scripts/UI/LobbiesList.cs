@@ -79,7 +79,7 @@ public class LobbiesList : MonoBehaviour
             var joiningLobby = await Lobbies.Instance.JoinLobbyByIdAsync(lobby.Id);
             string joinCode = joiningLobby.Data["JoinCode"].Value;
 
-            await ClientSingleTon.Instance.GameManager.StartClientAsync(joinCode);
+            //await ClientSingleTon.Instance.GameManager.StartClientAsync(joinCode);
         }
         catch (LobbyServiceException ex)
         {

@@ -1,34 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ApplicationController : MonoBehaviour
 {
-    [SerializeField] private ClientSingleTon clientPrefab;
-    [SerializeField] private HostSingleTon hostPrefab;
-
-    private async void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         DontDestroyOnLoad(gameObject);
 
-        await LaunchInMode(SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Null);
+        LauncherInMode(SystemInfo.graphicsDeviceType == GraphicsDeviceType.Null);
     }
 
-    private async Task LaunchInMode(bool isDedicatedServer)
+    private void LauncherInMode(bool isDedicated)
     {
-        if (isDedicatedServer) return;
+        if (isDedicated) return;
 
-        HostSingleTon hostSingleTon = Instantiate(hostPrefab);
-        hostSingleTon.CreateHost();
-
-        ClientSingleTon clientSingleTon = Instantiate(clientPrefab);
-        bool authenticated = await clientSingleTon.CreateClientAsync();
-
-        if (authenticated)
-        {
-            clientSingleTon.GameManager.GoToMenu();
-        }
+        //create host 
+        //create client
+        //go to mainMenu
     }
 }
